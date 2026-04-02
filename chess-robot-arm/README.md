@@ -17,7 +17,7 @@
 <br/>
 
 <!-- Add your demo GIF here -->
-![Chess Robot Arm](chess-robot-arm/demo/arm.jpg)
+![Chess Robot Arm](demo/arm.jpg)
 
 </div>
 
