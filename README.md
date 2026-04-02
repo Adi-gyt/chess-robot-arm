@@ -2,7 +2,7 @@
 
 # ♟️ Chess Robot Arm
 
-### *A modular chess-playing robotic system integrating vision, decision-making, and robotic control.*
+### *ROS2-based real-time system for autonomous chess play using vision, engine decisions, and robotic control.*
 ![Python](https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![ROS2](https://img.shields.io/badge/ROS2-Humble-22314E?style=for-the-badge&logo=ros&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-absdiff-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
