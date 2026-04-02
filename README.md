@@ -139,7 +139,7 @@ Before the arm could play a single game, every one of the **64 squares** had to 
 
 ```
  ┌──────────────┐     HTTP      ┌──────────────────────┐
- │ 📱 IP Webcam │ ────────────▶ │   chess_vision.py    │
+ │ 📱 IP Webcam │ ────────────▶│   chess_vision.py    │
  └──────────────┘               │                      │
                                 │  cv2.absdiff detect  │
                                 │  64-square grid diff │
