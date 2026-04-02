@@ -20,15 +20,20 @@
 
 ## 🧠 What is this?
 
-A fully autonomous **chess-playing robotic arm** that:
+A system that watches a real chess board, understands the move, and physically responds — all in real time.
 
-- 👁️ **Sees** the board using a phone camera + OpenCV frame differencing
-- 🧩 **Understands** the move using `python-chess` for legal move validation
-- ♟️ **Thinks** using Stockfish 14 running inside a ROS 2 node
-- 🦾 **Moves** a physical 5-DOF servo arm via a Raspberry Pi Pico
+### How it works
 
-No pre-programmed openings. No hardcoded responses. Just play — and watch it respond.
+- 👁️ **Sees**  
+  A fixed overhead camera detects moves using frame differencing (`cv2.absdiff`) over a calibrated 64-square grid.
 
+- 🧠 **Understands**  
+  Moves are validated using `python-chess`, then passed to Stockfish to compute the best response.
+
+- 🦾 **Acts**  
+  A state machine (`PICK → LIFT → MOVE → PLACE → HOME`) converts moves into calibrated servo actions via the Raspberry Pi Pico.
+
+All components communicate through ROS2, forming a clean perception → decision → actuation pipeline.
 ---
 
 ## 🎬 Demo
@@ -130,6 +135,10 @@ Before the arm could play a single game, every one of the **64 squares** had to 
 
 ---
 
+### System Overview
+
+A real-time pipeline where vision detects a move, a chess engine computes the response, and a robotic arm executes it through a calibrated state machine.
+
 ## ⚡ System Pipeline (V3)
 
 ```
@@ -172,6 +181,34 @@ Before the arm could play a single game, every one of the **64 squares** had to 
 ```
 
 ---
+
+## ⚠️ Engineering Challenges
+
+- **Reliable move detection under real-world conditions**  
+  Initial YOLO-based approach failed due to lighting variability. Switched to a deterministic frame differencing method with a fixed camera and calibrated grid.
+
+- **Electrical reliability & hardware failures**  
+  Faced ground leakage issues that damaged an Arduino and stressed multiple high-torque servos. Required careful power isolation and stable supply selection beyond standard lab adapters.
+
+- **Mechanical limitations under load**  
+  Larger servos experienced gear slipping and instability under load, requiring adjustments in motion strategy and load distribution.
+
+- **Precise motion tuning**  
+  Determining optimal slew speeds (ms/°) for each servo was critical to balance speed, smoothness, and mechanical safety.
+
+- **Collision-free movement planning**  
+  Sequential motion planning was required to avoid knocking over adjacent chess pieces during pick-and-place operations.
+
+- **Mapping board state to physical coordinates**  
+  Required manual calibration of all 64 squares and special zones, stored as reusable JSON data.
+
+- **System synchronization**  
+  Ensuring correct sequencing between vision detection, move validation (`python-chess`), and execution to prevent invalid or duplicate moves.
+
+- **System decoupling and communication**  
+  Used ROS2 pub/sub to isolate perception, decision, and control modules, avoiding tight coupling across the system.
+
+  ---
 
 ## 🛠️ Hardware
 
