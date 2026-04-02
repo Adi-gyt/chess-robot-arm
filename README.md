@@ -320,11 +320,13 @@ Slew speeds (ms per degree — controls smoothness):
 
 ---
 
-## 🎥 Video
+## 🎥 Demo Video
 
-https://github.com/Adi-gyt/chess-robot-arm/raw/main/demo/demo.mp4
+Watch the robotic arm executing a move:
 
-> Arm executing a move response. Gripper calibration was still in progress during this recording — full pick-and-place working in final version.
+👉 https://github.com/Adi-gyt/chess-robot-arm/raw/main/demo/demo.mp4
+
+> Note: Gripper calibration was still in progress during this recording — full pick-and-place is more refined in the current system.
 
 ---
 
