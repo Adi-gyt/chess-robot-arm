@@ -12,10 +12,6 @@
 
 <br/>
 
-> *"Built iteratively. Broke things. Fixed things. Shipped it."*
-
-<br/>
-
 ![Chess Robot Arm](demo/arm.jpg)
 
 </div>
