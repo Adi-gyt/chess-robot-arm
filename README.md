@@ -43,6 +43,44 @@ No pre-programmed openings. No manual input. Just play — and watch it respond.
 
 ---
 
+---
+
+## 🔧 Calibration Tool
+
+Before the arm could play chess, every one of the 64 squares had to be manually calibrated. We built a custom browser-based calibration tool to make this possible.
+
+### How it worked
+1. Click a square on the 8×8 grid
+2. Use servo sliders to physically position the arm over that square
+3. Click **Save This Square** — angles saved to JSON
+4. Repeat for all 64 squares + special zones
+
+### Features
+| Tab | Purpose |
+|---|---|
+| Servo Control | Individual slider for each of 6 servos with live PWM display |
+| Board Squares | 8×8 grid — click any square to calibrate it |
+| Special Zones | Rest position, capture zone, promotion reserve |
+| Safe Limits | Min/max angle limits per servo to prevent damage |
+| Slew Speed | Configure how fast each servo moves (ms per degree) |
+| Sequencer | Test full move sequences before live game |
+
+### Screenshots
+
+**Servo Control — 6 sliders, live PWM feedback**
+![Servo Control](demo/calib_servo_control.png)
+
+**Board Squares — 64 squares, all calibrated**
+![Board Squares](demo/calib_board_squares.png)
+
+**Special Zones — Rest, Capture, Promotion**
+![Special Zones](demo/calib_special_zones.png)
+
+**Sequencer — Test Normal, Capture, Castling, En Passant, Promotion**
+![Sequencer](demo/calib_sequencer.png)
+
+---
+
 ![ROS2 Pipeline](demo/ros_pipeline.png)
 
 ## 🔄 The Journey — 3 Versions
