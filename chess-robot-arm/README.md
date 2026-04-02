@@ -43,6 +43,8 @@ No pre-programmed openings. No manual input. Just play — and watch it respond.
 
 ---
 
+![ROS2 Pipeline](demo/ros_pipeline.png)
+
 ## 🔄 The Journey — 3 Versions
 
 ```
