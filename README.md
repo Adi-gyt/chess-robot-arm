@@ -2,7 +2,7 @@
 
 # ♟️ Chess Robot Arm
 
-### *A machine that thinks, sees, and plays chess.*
+### *A modular robotic system that detects chess moves using vision, computes responses using Stockfish, and executes them using a robotic arm.*
 
 ![Python](https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![ROS2](https://img.shields.io/badge/ROS2-Humble-22314E?style=for-the-badge&logo=ros&logoColor=white)
